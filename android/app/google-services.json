@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "328400650031",
+    "project_id": "smartpractice-5bf06",
+    "storage_bucket": "smartpractice-5bf06.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:328400650031:android:e4f29fbc2b051ae441abda",
+        "android_client_info": {
+          "package_name": "com.smartpractice"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "328400650031-9lb8oiad6cp1gp8n4374g6q1pbtihkfl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQsJQJdJuk-tL8txgFPabB7akEj7XUjbY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "328400650031-9lb8oiad6cp1gp8n4374g6q1pbtihkfl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
