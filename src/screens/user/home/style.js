@@ -6,9 +6,6 @@ const styles = StyleSheet.create({
       borderRadius: 5,
       marginVertical: 5,
       marginHorizontal: 10,
-      // flexDirection:'row',
-      // alignItems:'center',
-      // justifyContent:'space-between',
       backgroundColor: COLORS.WHITE,
       elevation: 2
    },
@@ -40,7 +37,15 @@ const styles = StyleSheet.create({
       flexDirection: 'row',
       justifyContent: 'space-between',
       marginTop: 5
-   }
+   },
+   liststyle1: {
+      padding: 20,
+      borderRadius: 5,
+      marginVertical: 5,
+      marginHorizontal: 10,
+      backgroundColor: COLORS.GRAY,
+      elevation: 2
+   },
 
 })
 

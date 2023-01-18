@@ -1,10 +1,10 @@
 import React, { Component, useState } from 'react'
 import { KeyboardAvoidingView, Text, View, ScrollView, ToastAndroid } from 'react-native'
 import CommonButton from '../../../components/common/commonButton'
+import Commonheader from '../../../components/common/commonheader'
 import CommonTextInput from '../../../components/common/commonTextInput'
 import COLORS from '../../../constants/colors'
 import { createQuestion } from '../../../utils/database'
-
 export default function Addquestion({ navigation, route }) {
 
   const [currentQuizId, setCurrentQuizId] = useState(route.params.currentQuizId)
@@ -47,6 +47,7 @@ export default function Addquestion({ navigation, route }) {
     <KeyboardAvoidingView style={{ flex: 1 }}>
       <ScrollView style={{ flex: 1, backgroundColor: COLORS.WHITE }}>
         <View>
+        <Commonheader heading='Add Question'/>
           <CommonTextInput
             label='Question'
             placeholder='Enter question'
@@ -81,7 +82,7 @@ export default function Addquestion({ navigation, route }) {
             style={{ backgroundColor: COLORS.GRAY }}
           />
           <CommonButton
-            title='Done & Go Home'
+            title='Done'
             onPress={() => {
               setCurrentQuizId('')
               navigation.navigate('AdminDrawer')

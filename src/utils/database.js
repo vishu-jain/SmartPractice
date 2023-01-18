@@ -1,9 +1,11 @@
 import firestore, { firebase } from '@react-native-firebase/firestore';
 
-export const createQuiz = (currentQuizId,title,description) => {
+export const createQuiz = (currentQuizId,title,description,lastdate,time) => {
     return firestore().collection('Quizzes').doc(currentQuizId).set({
         title,
-        description
+        description,
+        lastdate,
+        time
     })
 }
 

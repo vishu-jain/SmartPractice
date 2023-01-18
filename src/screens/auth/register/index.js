@@ -11,8 +11,7 @@ import styles from './style'
 import axios from 'axios'
 import { emailValidation, letterValidation,passwordValidation } from '../../../utils/validations'
 import COLORS from '../../../constants/colors'
-import database from '@react-native-firebase/database'
-import auth from '@react-native-firebase/auth'
+import { signUp } from '../../../utils/auth'
 
 export default function Register({ navigation }) {
 
@@ -36,17 +35,13 @@ export default function Register({ navigation }) {
   useEffect(() => {
     axios.get('https://restcountries.com/v2/all')
       .then(function (response) {
-        console.log(response.data[0].name)
-       for(var i=0;i<response.data.length;i++){
-        list = response.data[i].name
-        // setlistCountry(list);
-        console.log(list) 
-      }
+      setlistCountry([...response.data]);
       })
+      
       .catch(function (error) {
         console.log(error);
       });
-  })
+  },[])
 
   // useEffect(() => {
   //   setlistCountry(list);
@@ -57,9 +52,10 @@ export default function Register({ navigation }) {
       name: userName,
       email: email,
       password: password,
-      // country: country,
+      country: country,
       gender: gender.label,
     };
+    // console.log(params.country.name,'params');
     if (!userName) {
       Alert.alert('Please enter name');
     } else if (letterValidation(userName)) {
@@ -72,29 +68,10 @@ export default function Register({ navigation }) {
       Alert.alert('Please enter password');
     } else if (!passwordValidation(password)) {
       Alert.alert('Invalid password');
-    } else {
-      // dispatch(AppActions.register(params, navigation));
-      auth().createUserWithEmailAndPassword(email,password)
-  .then(() => {
-    console.log('User account created & signed in!');
-    const newReference = database().ref('/register').push();
-      newReference
-      .set({
-        params
-      })
-      .then(() => console.log('Data updated.'));
-      navigation.navigate('Login')
-  })
-  .catch(error => {
-    if (error.code === 'auth/email-already-in-use') {
-      console.log('That email address is already in use!');
-    }
-
-    if (error.code === 'auth/invalid-email') {
-      console.log('That email address is invalid!');
-    }
-    console.error(error);
-  })
+    } else if (!country) {
+      Alert.alert('Please select country');
+    }else {
+  signUp(params.name, params.email, params.password, params.country.name,params.gender ,navigation);
     }
   };
 
@@ -152,14 +129,14 @@ export default function Register({ navigation }) {
           data={listCountry}
           search
           maxHeight={300}
-          labelField="state"
-          placeholder="Select state"
+          labelField="name"
+          placeholder="Select country"
           searchPlaceholder="Search..."
           value=""
           onFocus={() => setIsFocus(true)}
           onBlur={() => setIsFocus(false)}
           onChange={item => {
-            setCountry(item.state);
+            setCountry(item);
             setIsFocus(false);
           }}
         />

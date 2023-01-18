@@ -3,6 +3,7 @@ import CustomDraw from './customDrawer';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import TabNav from '../tab'
+import COLORS from '../../../constants/colors';
 
 const Draw = createDrawerNavigator();
 
@@ -30,7 +31,7 @@ export default function Drawernavigator() {
           fontSize: 25,
         },
         headerStyle: {
-          backgroundColor: '#004169',
+          backgroundColor: COLORS.BUTTONCOLOR,
           height: 60,
           borderBottomLeftRadius: 30,
           borderBottomRightRadius: 30,

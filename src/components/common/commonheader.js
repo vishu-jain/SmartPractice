@@ -6,14 +6,17 @@ import { TouchableOpacity } from 'react-native-gesture-handler'
 
 export default function Commonheader({
     heading,
-    onPress
+    onPress,
+    iconName
 }) {
  
     return (
       <View style={{backgroundColor:COLORS.BUTTONCOLOR,height:50,flexDirection:'row',alignItems:'center'}}>
-        <TouchableOpacity onPress={onPress}>
-        <Icon name='chevron-back' size={30} color={COLORS.WHITE}/>
-        </TouchableOpacity>
+        <View>
+       {iconName ?
+        (<Icon name={iconName} size={30} color={COLORS.WHITE} onPress={onPress}/>):null
+       }
+        </View>
         <View style={{justifyContent:'center',flex:1,alignItems:'center'}}>
         <Text style={{fontSize:25,color:COLORS.WHITE,fontWeight:'bold'}}> {heading} </Text>
         </View>

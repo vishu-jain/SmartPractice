@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
   },
   submitButton: {
     width: '48%',
-    backgroundColor: COLORS.PRIMARY,
+    backgroundColor: COLORS.GREEN,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 10,

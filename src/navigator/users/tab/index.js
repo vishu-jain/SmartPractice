@@ -3,7 +3,8 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Image, View} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Home from '../../../screens/user/home';
-import Dashboard from '../../../screens/user/dashboard';
+import Leaderboard from '../../../screens/user/leaderboard';
+import COLORS from '../../../constants/colors';
 
 const Tab = createBottomTabNavigator();
 
@@ -44,32 +45,24 @@ export default function Tabnavigator() {
               />
             );
           },
-          // tabBarIcon: ({focused, size, color}) => {
-          //   let iconName;
+          tabBarIcon: ({focused, size, color}) => {
+            let iconName;
 
-          //   if (route.name === 'Calendar') {
-          //     iconName = focused
-          //       ? Images.calender_outlineicon
-          //       : Images.calendericon;
-          //   } else if (route.name === 'Forum') {
-          //     iconName = focused ? Images.forum_outlineicon : Images.forumicon;
-          //   } else if (route.name === 'Home') {
-          //     iconName = focused ? Images.home_outlineicon : Images.homeicon;
-          //   } else if (route.name === 'Chat') {
-          //     iconName = focused ? Images.chat_outlineicon : Images.chaticon;
-          //   } else if (route.name === 'MyPortfolio') {
-          //     iconName = focused
-          //       ? Images.portfolio_outlineicon
-          //       : Images.portfolioicon;
-          //   }
+           if (route.name === 'Home') {
+              iconName = focused ? 'home' : 'home-outline';
+            } else if (route.name === 'Leaderboard') {
+              iconName = focused ? 'trophy' : 'trophy-outline';
+            }
 
-          //   // You can return any component that you like here!
-          //   return <Image source={iconName} resizeMode="contain" />;
-          // },
+            // You can return any component that you like here!
+            return <Icon name={iconName} size={size} color={color}/>;
+          },
+          tabBarActiveTintColor: COLORS.WHITE,
+          tabBarInactiveTintColor: 'gray',
         })}>
        
         <Tab.Screen name="Home" component={Home} />
-        <Tab.Screen name="Dashboard" component={Dashboard} />
+        <Tab.Screen name="Leaderboard" component={Leaderboard} />
       </Tab.Navigator>
     </View>
   );

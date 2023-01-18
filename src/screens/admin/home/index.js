@@ -25,7 +25,7 @@ export default function Home({ navigation }) {
     getAllQuizzes();
   },[])
   return (
-    <View>
+    <View style={{flex:1}}>
       <FlatList
         data={allQuizzes}
         onRefresh={getAllQuizzes}

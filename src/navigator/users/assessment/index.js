@@ -5,9 +5,8 @@ const Stack = createNativeStackNavigator();
 export default function Assessmentstack(){
 
 return (
-    <Stack.Navigator>
-        <Stack.Screen name ="Startassessment" component={Startassessment}/>
-        {/* <Stack.Screen name="Addquestion" component={Addquestion} />  */}
+    <Stack.Navigator >
+        <Stack.Screen name ="Startassessment" component={Startassessment} options={{headerShown:false}}/>
     </Stack.Navigator>
 )
 }

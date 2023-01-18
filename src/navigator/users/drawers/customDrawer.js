@@ -2,6 +2,7 @@ import React from 'react';
 import { DrawerContentScrollView, DrawerItem } from '@react-navigation/drawer';
 import { View, Image } from 'react-native';
 import Images from '../../../assets';
+import Icon from 'react-native-vector-icons/Ionicons';
 const CustomDraw = ({navigation}) => {
   return (
     <View style={{ flex: 1 }}>
@@ -20,49 +21,27 @@ const CustomDraw = ({navigation}) => {
       </View>
       <DrawerContentScrollView>
         <DrawerItem
-          // icon={() => (
-          //   <Image
-          //     source={Images.profileicon}
-          //     style={{ height: 20, width: 20 }}
-          //     resizeMode="contain"
-          //   />
-          // )}
+          icon={() => (
+            <Icon name='person' size={20} />
+          )}
           label="My Profile"
           labelStyle={{ fontSize: 20}}
           onPress={() => navigation.navigate('My Profile')}
         />
         <DrawerItem
-          // icon={() => (
-          //   <Image
-          //     source={Images.referralicon}
-          //     style={{ height: 20, width: 20 }}
-          //     resizeMode="contain"
-          //   />
-          // )}
-          label="Referral"
-          labelStyle={{ fontSize: 20}}
-          onPress={() => navigation.navigate('Referral')}
-        />
-        <DrawerItem
-          // icon={() => (
-          //   <Image
-          //     source={Images.settingsicon}
-          //     style={{ height: 20, width: 20 }}
-          //     resizeMode="contain"
-          //   />
-          // )}
+          icon={() => (
+            <Icon
+              name='settings' size={20}
+            />
+          )}
           label="Settings"
           labelStyle={{ fontSize: 20 }}
           onPress={() => navigation.navigate('Settings')}
         />
         <DrawerItem
-          // icon={() => (
-          //   <Image
-          //     source={Images.logouticon}
-          //     style={{ height: 20, width: 20 }}
-          //     resizeMode="contain"
-          //   />
-          // )}
+          icon={() => (
+            <Icon name='log-out' size={20}/>
+          )}
           label="Logout"
           labelStyle={{ fontSize: 20}}
           onPress={() => {

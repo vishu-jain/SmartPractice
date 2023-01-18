@@ -6,6 +6,7 @@ import { getQuestions, getQuestionsByQuizId } from '../../../utils/database';
 import COLORS from '../../../constants/colors';
 import styles from './style';
 import ResultModal from '../../../components/resultmodal';
+import {Timer, Countdown} from 'react-native-element-timer';
 
 export default function Startassessment({ navigation, route }) {
 
@@ -80,11 +81,31 @@ export default function Startassessment({ navigation, route }) {
         getQuestiondetails();
     }, []);
 
+        const countdownRef = useRef(null);
+
+
+        // useEffect(()=>{
+        //     countdownRef.current.start();
+        // },[])
+   
+    console.log('play quiz')
+
     return (
-        <View>
+        <View style={{flex:1}}>
             <Commonheader heading={title} onPress={() => {
                 navigation.goBack()
             }} />
+             <Countdown
+                    ref={countdownRef}
+                    // style={styles.timer}
+                    // textStyle={styles.timerText}
+                    initialSeconds={10}
+
+                    // autoStart={true}
+                    onTimes={e => {}}
+                    onPause={e => {}}
+                    onEnd={(e) => {}}
+                />
             <FlatList
                 horizontal
                 ref={ref}
@@ -152,8 +173,7 @@ export default function Startassessment({ navigation, route }) {
                 )}
                 
             />
-            <View style={styles.bottom}>
-                
+            <View style={styles.bottom}>  
                 {currentIndex > 0 ? (
                 
                     <TouchableOpacity

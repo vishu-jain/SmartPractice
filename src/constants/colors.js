@@ -15,8 +15,8 @@ const COLORS = {
   PLACEHOLDER: 'rgba(0, 0, 0, 0.39)',
   CANCELBUTTON: 'rgb(191,191,191)',
   LIGHTBLACK1: "rgba(0, 0, 0, 0.4)",
-  LIGHTBLACK2: "rgba(0, 0, 0, 0.3)"
-
+  LIGHTBLACK2: "rgba(0, 0, 0, 0.3)",
+  GREEN:'#103011'
 };
 
 module.exports = COLORS;
