@@ -1,4 +1,4 @@
-import STRINGS from '../constants/strings';
+// import STRINGS from '../constants/strings';
 import {useSelector} from 'react-redux';
 
 function emailValidation(text) {
@@ -13,7 +13,6 @@ function emailValidation(text) {
 }
 
 function passwordValidation(text) {
-
   const passwordRegex =
     /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,16}$/;
   if (passwordRegex.test(text)) {

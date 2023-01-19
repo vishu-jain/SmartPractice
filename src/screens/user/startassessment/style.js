@@ -71,5 +71,23 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: 10,
   },
+  timerView: {
+    backgroundColor: COLORS.BUTTONCOLOR,
+    height: 50,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingRight: 10,
+  },
+  titleView: {
+    fontSize: 25,
+    color: COLORS.WHITE,
+    fontWeight: 'bold',
+  },
+  timerStyle: {
+    fontSize: 25,
+    color: COLORS.RED,
+    fontWeight: 'bold',
+  },
 });
 export default styles;

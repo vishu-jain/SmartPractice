@@ -35,9 +35,7 @@ const ResultModal = ({
             padding: 40,
             alignItems: 'center',
           }}>
-          <Text style={{fontSize: 35}}>
-            Results
-          </Text>
+          <Text style={{fontSize: 35}}>Results</Text>
           <View
             style={{
               flexDirection: 'row',
@@ -45,9 +43,7 @@ const ResultModal = ({
               justifyContent: 'space-between',
             }}>
             <View style={{alignItems: 'center', padding: 20}}>
-              <Text style={{fontSize: 30}}>
-                {correctCount}
-              </Text>
+              <Text style={{fontSize: 30}}>{correctCount}</Text>
               <View
                 style={{
                   flexDirection: 'row',
@@ -55,15 +51,11 @@ const ResultModal = ({
                   justifyContent: 'center',
                 }}>
                 <Icon name="checkmark" size={25} color="green" />
-                <Text style={{fontSize: 18}}>
-                  Correct
-                </Text>
+                <Text style={{fontSize: 18}}>Correct</Text>
               </View>
             </View>
             <View style={{alignItems: 'center', padding: 20}}>
-              <Text style={{fontSize: 30}}>
-                {incorrectCount}
-              </Text>
+              <Text style={{fontSize: 30}}>{incorrectCount}</Text>
               <View
                 style={{
                   flexDirection: 'row',
@@ -71,18 +63,18 @@ const ResultModal = ({
                   justifyContent: 'center',
                 }}>
                 <Icon name="close" size={25} color="red" />
-                <Text style={{fontSize: 18}}>
-                  Incorrect
-                </Text>
+                <Text style={{fontSize: 18}}>Incorrect</Text>
               </View>
             </View>
           </View>
           <Text style={{fontSize: 18}}>
             {totalCount - (incorrectCount + correctCount)} Unattempted
           </Text>
-          <View style={{marginTop: 20}}>
-            <CommonButton title='Go Home' onPress={handleHome} />
-          </View>
+          <CommonButton
+            title="Done"
+            onPress={handleHome}
+            style={{width: 100}}
+          />
         </View>
       </View>
     </Modal>

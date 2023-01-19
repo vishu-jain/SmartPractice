@@ -1,11 +1,11 @@
 import React from 'react';
-import { DrawerContentScrollView, DrawerItem } from '@react-navigation/drawer';
-import { View, Image } from 'react-native';
+import {DrawerContentScrollView, DrawerItem} from '@react-navigation/drawer';
+import {View, Image} from 'react-native';
 import Images from '../../../assets';
 import Icon from 'react-native-vector-icons/Ionicons';
 const CustomDraw = ({navigation}) => {
   return (
-    <View style={{ flex: 1 }}>
+    <View style={{flex: 1}}>
       <View
         style={{
           flex: 0.2,
@@ -15,35 +15,27 @@ const CustomDraw = ({navigation}) => {
         }}>
         <Image
           source={Images.logo2}
-          style={{ height: 250, width: 250 }}
+          style={{height: 250, width: 250}}
           resizeMode="contain"
         />
       </View>
       <DrawerContentScrollView>
         <DrawerItem
-          icon={() => (
-            <Icon name='person' size={20} />
-          )}
+          icon={() => <Icon name="person" size={20} />}
           label="My Profile"
-          labelStyle={{ fontSize: 20}}
-          onPress={() => navigation.navigate('My Profile')}
+          labelStyle={{fontSize: 20}}
+          onPress={() => navigation.navigate('Myprofile')}
         />
         <DrawerItem
-          icon={() => (
-            <Icon
-              name='settings' size={20}
-            />
-          )}
+          icon={() => <Icon name="settings" size={20} />}
           label="Settings"
-          labelStyle={{ fontSize: 20 }}
+          labelStyle={{fontSize: 20}}
           onPress={() => navigation.navigate('Settings')}
         />
         <DrawerItem
-          icon={() => (
-            <Icon name='log-out' size={20}/>
-          )}
+          icon={() => <Icon name="log-out" size={20} />}
           label="Logout"
-          labelStyle={{ fontSize: 20}}
+          labelStyle={{fontSize: 20}}
           onPress={() => {
             navigation.reset({
               index: 0,

@@ -4,11 +4,11 @@ import {TouchableOpacity, Text, StyleSheet, View} from 'react-native';
 import COLORS from '../../constants/colors';
 // const {FONTS, COLORS} = GLOBALS;
 
-export default function CommonButton({title, onPress, style,textstyle}) {
+export default function CommonButton({title, onPress, style, textstyle}) {
   return (
     <View>
       <TouchableOpacity style={[styles.button, style]} onPress={onPress}>
-        <Text style={[styles.font,textstyle]}> {title}</Text>
+        <Text style={[styles.font, textstyle]}> {title}</Text>
       </TouchableOpacity>
     </View>
   );
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginHorizontal: 20,
     marginTop: 40,
-    marginBottom:10
+    marginBottom: 10,
   },
   font: {
     fontSize: 30,

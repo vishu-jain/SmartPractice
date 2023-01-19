@@ -221,6 +221,14 @@ android {
             keyPassword 'android'
         }
     }
+    signingConfigs {
+    release {
+      storeFile file('SMP.keystore')
+      storePassword '123456'
+      keyAlias 'SMP'
+      keyPassword '123456'
+    }
+  }
     buildTypes {
         debug {
             signingConfig signingConfigs.debug
@@ -228,8 +236,8 @@ android {
         release {
             // Caution! In production, you need to generate your own keystore file.
             // see https://reactnative.dev/docs/signed-apk-android.
-            signingConfig signingConfigs.debug
-            minifyEnabled enableProguardInReleaseBuilds
+            signingConfig signingConfigs.release
+            minifyEnabled false
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
     }

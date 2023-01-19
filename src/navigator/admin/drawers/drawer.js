@@ -13,12 +13,13 @@ export default function Drawernavigatoradmin() {
     <Draw.Navigator
       drawerContent={props => <CustomDraw {...props} />}
       initialRouteName="Home"
-      screenOptions={({navigation})=>({
-        headerStyle:{
+      screenOptions={({navigation}) => ({
+        headerStyle: {
           backgroundColor: COLORS.BUTTONCOLOR,
         },
         headerTitleAlign: 'center',
         headerTintColor: 'white',
+        title: 'Welcome Admin',
         headerTitleStyle: {
           fontSize: 25,
         },
@@ -32,9 +33,8 @@ export default function Drawernavigatoradmin() {
               onPress={() => navigation.openDrawer()}
             />
           );
-        }
-      })}
-      >
+        },
+      })}>
       <Draw.Screen
         name="Home"
         component={Home}

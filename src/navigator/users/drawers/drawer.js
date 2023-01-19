@@ -2,8 +2,10 @@ import React from 'react';
 import CustomDraw from './customDrawer';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {createDrawerNavigator} from '@react-navigation/drawer';
-import TabNav from '../tab'
+import TabNav from '../tab';
 import COLORS from '../../../constants/colors';
+import Myprofile from '../../../screens/user/myprofile';
+import Settings from '../../../screens/user/settings';
 
 const Draw = createDrawerNavigator();
 
@@ -33,13 +35,23 @@ export default function Drawernavigator() {
         headerStyle: {
           backgroundColor: COLORS.BUTTONCOLOR,
           height: 60,
-          borderBottomLeftRadius: 30,
-          borderBottomRightRadius: 30,
+          // borderBottomLeftRadius: 30,
+          // borderBottomRightRadius: 30,
         },
       })}>
       <Draw.Screen
         name="Tab"
         component={TabNav}
+        options={{headerShown: false}}
+      />
+       <Draw.Screen
+        name="Myprofile"
+        component={Myprofile}
+        options={{headerShown: false}}
+      />
+       <Draw.Screen
+        name="Settings"
+        component={Settings}
         options={{headerShown: false}}
       />
     </Draw.Navigator>

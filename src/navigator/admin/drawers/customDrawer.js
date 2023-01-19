@@ -1,11 +1,11 @@
 import React from 'react';
-import { DrawerContentScrollView, DrawerItem } from '@react-navigation/drawer';
-import { View, Image } from 'react-native';
+import {DrawerContentScrollView, DrawerItem} from '@react-navigation/drawer';
+import {View, Image} from 'react-native';
 import Images from '../../../assets';
-import  Icon  from 'react-native-vector-icons/Ionicons';
+import Icon from 'react-native-vector-icons/Ionicons';
 const CustomDraw = ({navigation}) => {
   return (
-    <View style={{ flex: 1 }}>
+    <View style={{flex: 1}}>
       <View
         style={{
           flex: 0.2,
@@ -15,22 +15,22 @@ const CustomDraw = ({navigation}) => {
         }}>
         <Image
           source={Images.logo2}
-          style={{ height: 250, width: 250 }}
+          style={{height: 250, width: 250}}
           resizeMode="contain"
         />
       </View>
       <DrawerContentScrollView>
         <DrawerItem
           icon={() => (
-          //   <Image
-          //     source={Images.profileicon}
-          //     style={{ height: 20, width: 20 }}
-          //     resizeMode="contain"
-          //   />
-          <Icon name='home' size={20}/>
+            //   <Image
+            //     source={Images.profileicon}
+            //     style={{ height: 20, width: 20 }}
+            //     resizeMode="contain"
+            //   />
+            <Icon name="home" size={20} />
           )}
           label="Home"
-          labelStyle={{ fontSize: 20}}
+          labelStyle={{fontSize: 20}}
           onPress={() => navigation.navigate('Home')}
         />
         {/* <DrawerItem
@@ -64,10 +64,10 @@ const CustomDraw = ({navigation}) => {
             //   style={{ height: 20, width: 20 }}
             //   resizeMode="contain"
             // />
-            <Icon name='power' size={20}/>
+            <Icon name="power" size={20} />
           )}
           label="Logout"
-          labelStyle={{ fontSize: 20}}
+          labelStyle={{fontSize: 20}}
           onPress={() => {
             navigation.reset({
               index: 0,

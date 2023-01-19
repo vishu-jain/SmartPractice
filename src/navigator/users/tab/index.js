@@ -19,8 +19,8 @@ export default function Tabnavigator() {
           tabBarActiveBackgroundColor: '#004169',
           headerStyle: {
             backgroundColor: '#004169',
-            borderBottomLeftRadius: 30,
-            borderBottomRightRadius: 30,
+            // borderBottomLeftRadius: 30,
+            // borderBottomRightRadius: 30,
             height: 60,
           },
           tabBarStyle: {
@@ -28,7 +28,6 @@ export default function Tabnavigator() {
             borderTopRightRadius: 20,
           },
           tabBarHideOnKeyboard: true,
-          tabBarActiveTintColor: 'white',
           headerTintColor: 'white',
           headerTitleStyle: {
             fontSize: 25,
@@ -48,19 +47,18 @@ export default function Tabnavigator() {
           tabBarIcon: ({focused, size, color}) => {
             let iconName;
 
-           if (route.name === 'Home') {
+            if (route.name === 'Home') {
               iconName = focused ? 'home' : 'home-outline';
             } else if (route.name === 'Leaderboard') {
               iconName = focused ? 'trophy' : 'trophy-outline';
             }
 
             // You can return any component that you like here!
-            return <Icon name={iconName} size={size} color={color}/>;
+            return <Icon name={iconName} size={size} color={color} />;
           },
           tabBarActiveTintColor: COLORS.WHITE,
           tabBarInactiveTintColor: 'gray',
         })}>
-       
         <Tab.Screen name="Home" component={Home} />
         <Tab.Screen name="Leaderboard" component={Leaderboard} />
       </Tab.Navigator>
