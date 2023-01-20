@@ -9,10 +9,11 @@ import Settings from '../../../screens/user/settings';
 
 const Draw = createDrawerNavigator();
 
-export default function Drawernavigator() {
+export default function Drawernavigator({route}) {
+  console.log(route.params.userid,'Drawer params')
   return (
     <Draw.Navigator
-      drawerContent={props => <CustomDraw {...props} />}
+      drawerContent={props => <CustomDraw {...props}/>}
       initialRouteName="Tab"
       screenOptions={({route, navigation}) => ({
         headerTintColor: 'white',
@@ -43,9 +44,10 @@ export default function Drawernavigator() {
         name="Tab"
         component={TabNav}
         options={{headerShown: false}}
-      />
+      />  
        <Draw.Screen
         name="Myprofile"
+        initialParams={{ userid: route.params.userid }}
         component={Myprofile}
         options={{headerShown: false}}
       />

@@ -5,7 +5,7 @@ export default function Settings({navigation}) {
   return (
     <View>
          <Commonheader heading='Settings' iconName='chevron-back' onPress={()=>navigation.goBack()}/>
-      <Text>Settings</Text>
+      <Text>This page is under Maintainence</Text>
     </View>
   )
 }

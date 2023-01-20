@@ -6,12 +6,14 @@ export const createQuiz = (
   description,
   lastdate,
   time,
+  status
 ) => {
   return firestore().collection('Quizzes').doc(currentQuizId).set({
     title,
     description,
     lastdate,
     time,
+    status
   });
 };
 
@@ -43,3 +45,9 @@ export const getQuestionsByQuizId = currentQuesId => {
     .collection('QNA')
     .get();
 };
+
+// get user details
+export const getUserDetails= (userid) => {
+  return firestore().collection('users').doc(userid).get();
+};
+

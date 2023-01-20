@@ -68,7 +68,7 @@ export default function Home({navigation}) {
                   <View style={styles.timeview}>
                     <Text>Time Duration : {quiz.time} minutes</Text>
                     <Text>
-                      Status :<Text style={{color: COLORS.GREEN}}> Active</Text>
+                      Status :<Text style={{color: COLORS.GREEN}}> {quiz.status}</Text>
                     </Text>
                   </View>
                   <Text>Last date of assignment : {quiz.lastdate}</Text>
@@ -84,9 +84,8 @@ export default function Home({navigation}) {
                     {quiz.description}
                   </Text>
                   <View style={styles.timeview}>
-                    <Text style={styles.fontStyle}>
-                      Time Duration : {quiz.time} minutes
-                    </Text>
+                    <Text>
+                      Time Duration : {quiz.time} minutes</Text>
                     <Text>
                       Status : <Text style={{color: COLORS.RED}}>Missed</Text>
                     </Text>

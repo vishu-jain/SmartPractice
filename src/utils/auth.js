@@ -32,13 +32,23 @@ export const signUp = (name, email, password, country, gender, navigation) => {
 export const signIn = (email, password, navigation) => {
   auth()
     .signInWithEmailAndPassword(email, password)
-    .then(() => {
+    .then((res) => {
       if (email === 'admin@gmail.com') {
         ToastAndroid.show('Signed In', ToastAndroid.SHORT);
         navigation.reset({index: 1, routes: [{name: 'AdminDrawer'}]});
       } else {
         ToastAndroid.show('Signed In', ToastAndroid.SHORT);
-        navigation.reset({index: 1, routes: [{name: 'UserDrawer'}]});
+        navigation.reset({index: 1, 
+          routes:
+           [
+            {
+              name: 'UserDrawer',
+             params: {
+                userid: res.user.uid
+              }
+      }
+    ]
+  });
       }
     })
     .catch(error => {
@@ -66,3 +76,16 @@ export const ResetPassword = (email, navigation) => {
       const errorMessage = error.message;
     });
 };
+
+
+// Get user details by user email id
+// export const getUser = email => {
+//   auth()
+//   .getUserByEmail(email)
+//   .then((userRecord) => {
+//     console.log('Successfully fetched user data: ',userRecord);
+//   })
+//   .catch((error) => {
+//     console.log('Error fetching user data:', error);
+//   });
+// } 

@@ -20,8 +20,8 @@ import {signIn} from '../../../utils/auth';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 
 export default function Login({navigation}) {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('vishujain605@gmail.com');
+  const [password, setPassword] = useState('Vishu@123');
   const [seePassword, setSeePassword] = useState(true);
 
   const onLogin = () => {

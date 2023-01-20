@@ -22,6 +22,7 @@ export default function Createquiz({navigation}) {
   const [lastdate, setLastdate] = useState('');
   const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
   const [date, setDate] = useState('');
+  const [status,setStatus] = useState('Active');
   const showDatePicker = () => {
     setDatePickerVisibility(true);
   };
@@ -56,7 +57,7 @@ export default function Createquiz({navigation}) {
       const currentQuizId = Math.floor(
         100000 + Math.random() * 9000,
       ).toString();
-      await createQuiz(currentQuizId, title, description, lastdate, time);
+      await createQuiz(currentQuizId, title, description, lastdate, time,status);
       navigation.navigate('Addquestion', {
         currentQuizId: currentQuizId,
         currentQuiztitle: title,
