@@ -44,6 +44,33 @@ const styles = StyleSheet.create({
   passwordIcon: {
     paddingRight: 10,
   },
+  calendarView: {
+    borderWidth: 1,
+    borderColor: COLORS.PRIMARY,
+    height: 40,
+    borderRadius: 8,
+    paddingLeft: 8,
+    paddingRight: 8,
+    // flex:1,
+  },
+  calendarInput: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 10,
+  },
+  textStyle: {
+    fontSize: 16,
+  },
+  textArea: {
+    height: 80,
+    fontSize: 16,
+    padding: 8,
+    borderWidth: 1,
+    borderColor: 'gray',
+    borderRadius: 4,
+    margin:20
+  },
 });
 
 export default styles;
