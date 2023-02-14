@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react';
+import React, { useState } from 'react';
 import {
   Text,
   View,
@@ -11,8 +11,8 @@ import {
   TouchableWithoutFeedback,
   Linking
 } from 'react-native';
-import CommonButton from '../../../components/common/commonButton';
-import CommonTextInput from '../../../components/common/commonTextInput';
+import CommonButton from '@components/common/commonButton';
+import CommonTextInput from '@components/common/commonTextInput';
 import LinearGradient from 'react-native-linear-gradient';
 import Images from '../../../assets';
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -72,7 +72,6 @@ export default function Login({ navigation }) {
   let sound = null;
 
   function playSound() {
-    console.log('Ring')
     sound = new Sound('ringtone_1.mp3', Sound.MAIN_BUNDLE, (error) => {
       if (error) {
         console.log('failed to load the sound', error);
@@ -100,6 +99,7 @@ export default function Login({ navigation }) {
       console.log('SMS Callback: completed: ' + completed + ' cancelled: ' + cancelled + 'error: ' + error);
 
     });
+
   }
 
   const handleConfirm = datetime => {
@@ -259,8 +259,8 @@ export default function Login({ navigation }) {
                 <TouchableWithoutFeedback onPress={()=>setModalVisible(false)}>
               <View style={{flex: 1,justifyContent:'center',backgroundColor:'black'}}>
                 <View style={{height:360}}>
-                  <View style={{backgroundColor:'white',height:50,justifyContent:'center'}}>
-                  <Text style={{fontSize:20,fontWeight:'bold',color:'black',marginLeft:20}}>Profile</Text>
+                  <View style={{backgroundColor:'#012e2a',height:50,justifyContent:'center'}}>
+                  <Text style={{fontSize:20,fontWeight:'bold',color:'white',marginLeft:20}}>Profile</Text>
                   </View>
                   <Image source={Images.logo} resizeMode='stretch' style={{width:'100%',height:'86%'}}/>
                 </View>
